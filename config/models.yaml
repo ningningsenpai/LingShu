@@ -1,0 +1,60 @@
+providers:
+  ark_coding:
+    display_name: 方舟 Coding Plan
+    base_url_env: ARK_CODING_BASE_URL
+    api_key_env: ARK_CODING_API_KEY
+    default_base_url: https://ark.cn-beijing.volces.com/api/coding/v3
+    models:
+      glm_primary:
+        id: glm-5.3
+        pricing_mode: SUBSCRIPTION
+      glm_fast:
+        id: glm-5.3-flash
+        pricing_mode: SUBSCRIPTION
+      kimi_code:
+        id: kimi-k2.7-code
+        pricing_mode: SUBSCRIPTION
+      kimi_context:
+        id: kimi-k3
+        pricing_mode: SUBSCRIPTION
+      deepseek_flash:
+        id: deepseek-v4-flash
+        pricing_mode: SUBSCRIPTION
+      deepseek_pro:
+        id: deepseek-v4-pro
+        pricing_mode: SUBSCRIPTION
+
+  deepseek:
+    display_name: DeepSeek 官方
+    base_url_env: DEEPSEEK_BASE_URL
+    api_key_env: DEEPSEEK_API_KEY
+    default_base_url: https://api.deepseek.com
+    models:
+      default:
+        id: deepseek-v4-flash
+        pricing_mode: METERED
+        currency: USD
+        input_price_per_million: 0.44
+        cached_input_price_per_million: 0.014
+        output_price_per_million: 1.32
+
+  bailian:
+    display_name: 阿里云百炼
+    base_url_env: BAILIAN_BASE_URL
+    api_key_env: BAILIAN_API_KEY
+    default_base_url: https://dashscope.aliyuncs.com/compatible-mode/v1
+    models:
+      coder:
+        id: qwen3.8-max
+        pricing_mode: METERED
+        currency: CNY
+        input_price_per_million: 12
+        cached_input_price_per_million: 1.2
+        output_price_per_million: 36
+      fast:
+        id: qwen3.8-flash
+        pricing_mode: METERED
+        currency: CNY
+        input_price_per_million: 0.8
+        cached_input_price_per_million: 0.08
+        output_price_per_million: 2.7

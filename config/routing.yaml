@@ -1,0 +1,40 @@
+default:
+  provider: ark_coding
+  model: glm_primary
+
+rules:
+  - name: 快速低风险任务
+    keywords: [摘要, 格式, 定位, 简单, 小改动, 测试草稿, explain, summarize, format]
+    provider: ark_coding
+    model: glm_fast
+
+  - name: 专用代码生成
+    keywords: [代码生成, 代码补全, 局部实现, 单文件, implement, completion]
+    provider: ark_coding
+    model: kimi_code
+
+  - name: 大仓库和长上下文
+    keywords: [大仓库, 跨模块, 架构, 长上下文, 全局分析, large repository, architecture]
+    provider: ark_coding
+    model: kimi_context
+
+  - name: 算法与交叉复核
+    keywords: [算法, 复核, 第二意见, 边界条件, algorithm, verify]
+    provider: ark_coding
+    model: deepseek_flash
+
+  - name: 困难任务升级
+    keywords: [高风险, 疑难, 严重故障, 安全审计, critical, security audit]
+    provider: ark_coding
+    model: deepseek_pro
+
+trial_routes:
+  deepseek:
+    provider: deepseek
+    model: default
+  qwen_coder:
+    provider: bailian
+    model: coder
+  qwen_fast:
+    provider: bailian
+    model: fast
